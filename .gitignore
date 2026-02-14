@@ -1,0 +1,8 @@
+# PHPStorm
+.idea
+# Terraform
+aws-portfolio-iac/.terraform/
+aws-portfolio-iac/*.tfstate
+aws-portfolio-iac/*.tfstate.*
+aws-portfolio-iac/.terraform.lock.hcl
+aws-portfolio-iac/*.tfvars

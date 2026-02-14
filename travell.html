@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Journeys</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    position: relative;
+    color: white;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="text-center text-white" style="background-image: url('header-background.jpg'); background-size: cover; background-position: center; height: 400px;">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1 class="display-4">Maharastra Travel</h1>
+            <p>Discover Maharashtra: a vibrant tapestry of bustling cities, serene beaches, majestic forts, and ancient caves, where tradition and modernity blend seamlessly.</p>
+            <a href="#top-destinations" class="btn btn-primary btn-lg">Start Exploring</a>
+        </div>
+    </header>
+
+    <!-- Top Destinations Section -->
+    <section id="top-destinations" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Top Destinations</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="cultural-odyssey.jpg" class="card-img-top" alt="Cultural Odyssey">
+                        <div class="card-body">
+                            <h5 class="card-title">Cultural Odyssey</h5>
+                            <p class="card-text">Immerse yourself in rich traditions and vibrant cultures.</p>
+                            <a href="#" class="btn btn-success">Book Now</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- Repeat for other destinations -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Adventures Section -->
+    <section id="latest-adventures" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Latest Adventures</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="amazon.jpg" class="card-img-top" alt="Amazon">
+                        <div class="card-body">
+                            <h5 class="card-title">Tales from the Amazon</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for other adventures -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Maverick Section -->
+    <section id="travel-maverick" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Meet the Travel Maverick</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <img src="maverick.jpg" class="img-fluid rounded-circle mb-3" alt="Travel Maverick">
+                    <p>Join us as we uncover hidden gems, conquer uncharted territories, and embrace the thrill of the unknown. Let's turn ordinary trips into extraordinary tales that will leave you craving for more!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Section -->
+    <section id="subscription" class="py-5 bg-dark text-white">
+        <div class="container text-center">
+            <h2>Join the Adventure, Subscribe Now!</h2>
+            <form class="form-inline justify-content-center mt-3">
+                <input type="email" class="form-control mr-2" placeholder="Enter your email">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+  
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
