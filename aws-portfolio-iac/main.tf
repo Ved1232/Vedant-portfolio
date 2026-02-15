@@ -65,7 +65,7 @@ resource "aws_cloudfront_distribution" "cdn" {
   price_class         = "PriceClass_100" # cheapest
 
   # Add custom domain only after cert is issued
-  aliases = local.cf_aliases
+  aliases = var.enable_custom_domain ? [var.domain_name, var.www_domain_name] : []
 
   origin {
     domain_name              = aws_s3_bucket.site.bucket_regional_domain_name
