@@ -249,12 +249,13 @@ body.light .nav {
 ════════════════════════════════ */
 #home {
   padding: 3rem 5rem 4rem;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - var(--nav-h));
 }
+/* JS sets display:flex on #home, display:block on others */
 #home.active { display: flex; }
+
 
 .hero {
   display: grid;

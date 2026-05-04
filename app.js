@@ -7,88 +7,104 @@
 
   /* ── Section navigation ── */
   function activateSection(id) {
-    // Sections
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    // Validate id
     const target = document.getElementById(id);
-    if (target) target.classList.add('active');
+    if (!target) return;
 
-    // Nav links
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-link'));
-    const activeLink = document.querySelector(`.nav-link[data-section="${id}"]`);
-    if (activeLink) activeLink.classList.add('active-link');
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(s => {
+      s.classList.remove('active');
+      s.style.display = 'none';
+    });
+
+    // Show target — #home needs flex, rest need block
+    target.style.display = (id === 'home') ? 'flex' : 'block';
+    // Small delay so display kicks in before animation class
+    requestAnimationFrame(() => {
+      target.classList.add('active');
+    });
+
+    // Update nav active state — desktop + mobile
+    document.querySelectorAll('.nav-link, .mob-link').forEach(l => l.classList.remove('active-link'));
+    document.querySelectorAll(`[data-section="${id}"]`).forEach(l => l.classList.add('active-link'));
 
     // Close mobile menu
-    document.getElementById('mobileMenu').classList.remove('open');
+    const mob = document.getElementById('mobileMenu');
+    if (mob) mob.classList.remove('open');
 
-    // Update URL hash without scrolling
+    // Update URL hash silently
     history.replaceState(null, '', '#' + id);
+
+    // Scroll to top of page
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // Desktop nav links
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      activateSection(this.dataset.section);
-    });
+  /* ── Wire up ALL nav/section links ── */
+  document.addEventListener('click', function (e) {
+    // Walk up the DOM in case click is on a child (icon etc.)
+    const link = e.target.closest('[data-section]');
+    if (!link) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    activateSection(link.dataset.section);
   });
 
-  // Mobile nav links
-  document.querySelectorAll('.mob-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      activateSection(this.dataset.section);
-    });
-  });
-
-  // Inline links with data-section (e.g. "Contact Me" button in hero)
-  document.querySelectorAll('a[data-section]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      activateSection(this.dataset.section);
-    });
-  });
-
-  /* ── Hamburger menu ── */
+  /* ── Hamburger toggle ── */
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-  });
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('open');
+    });
+    // Close mobile menu on outside click
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+  }
 
   /* ── Theme toggle ── */
   const themeBtn = document.getElementById('themeBtn');
   const themeIcon = document.getElementById('themeIcon');
-  let isDark = true;
-
-  // Persist theme
-  if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light');
-    themeIcon.className = 'fas fa-sun';
-    isDark = false;
+  if (themeBtn && themeIcon) {
+    let isDark = localStorage.getItem('theme') !== 'light';
+    // Apply saved theme immediately
+    if (!isDark) {
+      document.body.classList.add('light');
+      themeIcon.className = 'fas fa-sun';
+    }
+    themeBtn.addEventListener('click', () => {
+      isDark = !isDark;
+      document.body.classList.toggle('light', !isDark);
+      themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
   }
 
-  themeBtn.addEventListener('click', () => {
-    isDark = !isDark;
-    document.body.classList.toggle('light', !isDark);
-    themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-
-  /* ── Hash navigation on load ── */
-  window.addEventListener('load', () => {
+  /* ── On page load: read hash and show correct section ── */
+  function init() {
     const hash = window.location.hash.replace('#', '');
-    if (hash && document.getElementById(hash)) {
-      activateSection(hash);
-    }
-  });
+    const startId = (hash && document.getElementById(hash)) ? hash : 'home';
+    activateSection(startId);
+  }
 
-  /* ── Skill bar animation on About section activation ── */
+  // Run immediately if DOM is ready, otherwise wait
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  /* ── Skill bar re-animation when About becomes visible ── */
   const observer = new MutationObserver(mutations => {
     mutations.forEach(m => {
       if (m.target.id === 'about' && m.target.classList.contains('active')) {
         m.target.querySelectorAll('.skill-fill').forEach(bar => {
           bar.style.animation = 'none';
-          void bar.offsetWidth; // reflow
+          void bar.offsetWidth;
           bar.style.animation = '';
         });
       }
@@ -99,7 +115,7 @@
     observer.observe(aboutSection, { attributes: true, attributeFilter: ['class'] });
   }
 
-  /* ── Contact form feedback ── */
+  /* ── Contact form loading state ── */
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', function () {
