@@ -104,7 +104,7 @@
 
       <div class="stats-row">
         <div class="stat-card">
-          <span class="stat-num">12+</span>
+          <span class="stat-num">6</span>
           <span class="stat-label">Projects Built</span>
         </div>
         <div class="stat-card">
@@ -248,59 +248,56 @@
       <div class="projects-grid">
 
         <div class="project-card featured">
-          <div class="project-img">
-            <img src="img/port1.jpg" alt="Azure 3-Tier Web App"/>
+          <div class="project-img icon-tile">
+            <div class="icon-visual"><i class="fas fa-robot"></i></div>
             <div class="project-overlay">
-              <a href="Azure.html" class="overlay-btn"><i class="fas fa-external-link-alt"></i> View Details</a>
-              <a href="https://github.com/Ved1232" class="overlay-btn outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://github.com/Ved1232/rag-docs-qa" class="overlay-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
             </div>
           </div>
           <div class="project-info">
             <div class="project-meta">
-              <span class="project-tag cloud">Azure</span>
-              <span class="project-tag infra">IaC</span>
-              <span class="project-tag devops">Networking</span>
+              <span class="project-tag ai">AI / RAG</span>
+              <span class="project-tag backend">LangChain</span>
+              <span class="project-tag docker">Docker</span>
             </div>
-            <h3>Azure 3-Tier Web App (EU-ready)</h3>
-            <p>Production-grade three-tier architecture on Azure with VNets, NSGs, load balancing, and GDPR-compliant deployment targeting the European market.</p>
+            <h3>RAG Document Q&amp;A Pipeline</h3>
+            <p>Ask questions about a set of documents and get answers based only on their content, not the model's general knowledge. Uses LangChain with OpenAI (GPT-4o-mini for answers, text-embedding-3-small for search), a Chroma/Pinecone vector store, and Redis to cache repeat questions. Packaged with Docker, with a Streamlit front end.</p>
           </div>
         </div>
 
         <div class="project-card">
-          <div class="project-img">
-            <img src="img/region.png" alt="AKS Platform IaC"/>
+          <div class="project-img icon-tile">
+            <div class="icon-visual"><i class="fas fa-car"></i></div>
             <div class="project-overlay">
-              <a href="Devops.html" class="overlay-btn"><i class="fas fa-external-link-alt"></i> View Details</a>
-              <a href="https://github.com/Ved1232" class="overlay-btn outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://github.com/Ved1232/cloudnative-carzone-platform" class="overlay-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
             </div>
           </div>
           <div class="project-info">
             <div class="project-meta">
-              <span class="project-tag k8s">Kubernetes</span>
-              <span class="project-tag devops">GitOps</span>
+              <span class="project-tag aws">AWS</span>
               <span class="project-tag infra">Terraform</span>
+              <span class="project-tag devops">Monitoring</span>
             </div>
-            <h3>AKS Platform IaC + GitOps</h3>
-            <p>Declarative Kubernetes platform on AKS with Terraform IaC, Argo CD GitOps delivery, promotion workflows, and automated rollbacks.</p>
+            <h3>CloudNative CarZone Platform</h3>
+            <p>A Django app deployed on AWS behind Nginx, with PostgreSQL for data and Prometheus + Grafana for monitoring. Terraform provisions the EC2 server and networking, and a CI/CD pipeline builds the Docker image, pushes it to AWS ECR, and redeploys it automatically.</p>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-img">
-            <img src="img/AWS.png" alt="AWS IoT Smart Agriculture"/>
+            <img src="img/AWS.png" alt="AWS IoT Smart Agriculture Pipeline"/>
             <div class="project-overlay">
-              <a href="Deployment.html" class="overlay-btn"><i class="fas fa-external-link-alt"></i> View Details</a>
-              <a href="https://github.com/Ved1232" class="overlay-btn outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://github.com/Ved1232/fleet-management-pipeline" class="overlay-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
             </div>
           </div>
           <div class="project-info">
             <div class="project-meta">
-              <span class="project-tag cloud" style="background:#ff9900;color:#000">AWS</span>
-              <span class="project-tag devops">IoT</span>
+              <span class="project-tag aws">AWS</span>
               <span class="project-tag infra">Serverless</span>
+              <span class="project-tag devops">IoT</span>
             </div>
             <h3>AWS IoT Smart Agriculture Pipeline</h3>
-            <p>End-to-end IoT data pipeline: IoT Core → Kinesis → Lambda → DynamoDB with real-time monitoring and alerting for smart agriculture sensors.</p>
+            <p>A serverless pipeline for streaming sensor data: events flow through Kinesis to Lambda functions, which write to DynamoDB and S3. Infrastructure is defined in Terraform so the whole stack can be rebuilt from code.</p>
           </div>
         </div>
 
@@ -308,37 +305,17 @@
           <div class="project-img">
             <img src="img/invent.jpg" alt="Django Tiffin Service"/>
             <div class="project-overlay">
-              <a href="Deployment.html" class="overlay-btn"><i class="fas fa-external-link-alt"></i> View Details</a>
-              <a href="https://github.com/Ved1232" class="overlay-btn outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://github.com/Ved1232/inventory_management" class="overlay-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
             </div>
           </div>
           <div class="project-info">
             <div class="project-meta">
               <span class="project-tag backend">Django</span>
-              <span class="project-tag cloud" style="background:#ff9900;color:#000">AWS</span>
+              <span class="project-tag aws">AWS</span>
               <span class="project-tag infra">DynamoDB</span>
             </div>
             <h3>Django Tiffin Service + DynamoDB</h3>
-            <p>Full-stack food delivery management system built with Django, hosted on AWS EC2, with DynamoDB for scalable NoSQL storage and S3 for media assets.</p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/Techie.jpg" alt="YCSB Benchmarking"/>
-            <div class="project-overlay">
-              <a href="Azure.html" class="overlay-btn"><i class="fas fa-external-link-alt"></i> View Details</a>
-              <a href="https://github.com/Ved1232" class="overlay-btn outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag backend">HBase</span>
-              <span class="project-tag infra">Benchmarking</span>
-              <span class="project-tag devops">Big Data</span>
-            </div>
-            <h3>YCSB Benchmarking (HBase)</h3>
-            <p>Database performance benchmarking using Yahoo Cloud Serving Benchmark (YCSB) against HBase, analysing read/write throughput and latency at scale.</p>
+            <p>A food delivery management system built with Django, using DynamoDB for fast NoSQL storage and S3 for images, hosted on AWS EC2.</p>
           </div>
         </div>
 
@@ -346,18 +323,17 @@
           <div class="project-img">
             <img src="img/port5.jpg" alt="CI/CD Dockerized 2-Tier App"/>
             <div class="project-overlay">
-              <a href="Devops.html" class="overlay-btn"><i class="fas fa-external-link-alt"></i> View Details</a>
-              <a href="https://github.com/Ved1232" class="overlay-btn outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://github.com/Ved1232/two-tier-webapp" class="overlay-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
             </div>
           </div>
           <div class="project-info">
             <div class="project-meta">
               <span class="project-tag devops">Jenkins</span>
-              <span class="project-tag k8s">Docker</span>
-              <span class="project-tag infra">CI/CD</span>
+              <span class="project-tag docker">Docker</span>
+              <span class="project-tag aws">AWS</span>
             </div>
             <h3>CI/CD: Dockerized 2-Tier App (Jenkins)</h3>
-            <p>Automated build, test, and deployment pipeline using Jenkins and Docker for a containerised two-tier application with staging and production environments.</p>
+            <p>A Jenkins pipeline for a Flask + MySQL app: on every push, Jenkins builds a Docker image, runs checks and a Trivy security scan, pushes the image to AWS ECR, then deploys it to EC2 with Docker Compose.</p>
           </div>
         </div>
 
@@ -365,18 +341,18 @@
           <div class="project-img">
             <img src="img/port7.jpg" alt="Portfolio Static Site"/>
             <div class="project-overlay">
-              <a href="index.html" class="overlay-btn"><i class="fas fa-external-link-alt"></i> View Live</a>
-              <a href="https://github.com/Ved1232/Vedant-portfolio" class="overlay-btn outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://vedantchavan01.vip" class="overlay-btn" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> View Live</a>
+              <a href="https://github.com/Ved1232/Vedant-portfolio" class="overlay-btn outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
             </div>
           </div>
           <div class="project-info">
             <div class="project-meta">
-              <span class="project-tag cloud">Azure</span>
-              <span class="project-tag devops">Static Site</span>
-              <span class="project-tag infra">CDN</span>
+              <span class="project-tag aws">AWS</span>
+              <span class="project-tag infra">Terraform</span>
+              <span class="project-tag devops">CDN</span>
             </div>
-            <h3>Portfolio Static Site (Cloud Hosted)</h3>
-            <p>This portfolio — hosted as a static site on Azure Blob Storage + Front Door CDN, with Terraform IaC for provisioning and GitHub Actions for deployment.</p>
+            <h3>Portfolio Static Site</h3>
+            <p>This portfolio — a plain HTML/CSS/JS site (no framework) hosted on AWS S3 and CloudFront. The hosting, TLS certificate, and a locked-down S3 bucket policy are all defined in Terraform, with a GitHub OIDC role already set up for automated deploys.</p>
           </div>
         </div>
 
