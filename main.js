@@ -81,7 +81,7 @@
       stagger: 0.12,
       delay: 0.15
     });
-    gsap.from(".hero__meta, .hero__actions", {
+    gsap.from(".hero__split", {
       opacity: 0, y: 24, duration: 0.9, ease: "power3.out",
       stagger: 0.12, delay: 0.7
     });

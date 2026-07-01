@@ -155,28 +155,18 @@ img { max-width: 100%; display: block; }
 .hero__word { display: inline-block; } /* animated by JS */
 .hero__line--indent .hero__word { color: transparent; -webkit-text-stroke: 2px var(--ink); }
 
-.hero__meta {
-  display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-end;
-  justify-content: space-between;
-  margin-top: 2.5rem; max-width: 62rem;
+.hero__split {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  max-width: 74rem;
 }
 .hero__text { display: flex; flex-direction: column; gap: 1.1rem; }
 .hero__role { max-width: 32rem; color: var(--muted); font-size: 1.05rem; }
 .hero__status { font-size: .8rem; color: var(--green); white-space: nowrap; }
 
-.hero__photo {
-  flex-shrink: 0;
-  width: clamp(76px, 9vw, 108px);
-  aspect-ratio: 1 / 1;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  overflow: hidden;
-  background: var(--surface);
-}
-.hero__photo img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  filter: grayscale(25%) contrast(1.05);
-}
 .dot {
   display: inline-block; width: 8px; height: 8px; border-radius: 50%;
   background: var(--green); margin-right: .5rem;
@@ -185,7 +175,72 @@ img { max-width: 100%; display: block; }
 }
 @keyframes pulse { 50% { opacity: .35; } }
 
-.hero__actions { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; }
+.hero__actions { display: flex; gap: 1rem; margin-top: .6rem; flex-wrap: wrap; }
+
+/* ---- portrait: seamless cutout + orbiting skill ring ---- */
+.hero__portrait {
+  position: relative;
+  width: clamp(240px, 26vw, 380px);
+  margin: 0 auto;
+  aspect-ratio: 2 / 3;
+}
+.hero__cutout {
+  position: relative;
+  z-index: 2;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  filter: contrast(1.03);
+  -webkit-mask-image: linear-gradient(to bottom, black 92%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 92%, transparent 100%);
+}
+
+.hero__orbit {
+  --r: 132px;
+  position: absolute;
+  top: 34%; left: 50%;
+  width: clamp(200px, 22vw, 300px);
+  height: clamp(200px, 22vw, 300px);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+.hero__ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 1px solid var(--line);
+}
+.hero__ring--b { inset: 16%; border-color: rgba(60, 240, 139, .25); }
+.hero__ring--spin { border: none; animation: orbitSpin 46s linear infinite; }
+
+.hero__badge {
+  position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+  transform: rotate(var(--angle)) translateX(var(--r)) rotate(calc(-1 * var(--angle)));
+}
+.hero__badge span {
+  display: flex; align-items: center; justify-content: center;
+  position: absolute; top: -16px; left: -32px;
+  width: 64px; height: 32px;
+  border-radius: 20px;
+  background: var(--surface); border: 1px solid var(--line);
+  font-family: var(--mono); font-size: .6rem; color: var(--ink);
+  letter-spacing: .02em; white-space: nowrap;
+  box-shadow: 0 0 14px rgba(60, 240, 139, .12);
+  animation: orbitSpinReverse 46s linear infinite;
+}
+
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
+@keyframes orbitSpinReverse { to { transform: rotate(-360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__ring--spin, .hero__badge span { animation: none; }
+}
+
+@media (max-width: 900px) {
+  .hero__split { grid-template-columns: 1fr; }
+  .hero__portrait { width: clamp(200px, 55vw, 300px); margin-top: 1.5rem; }
+  .hero__orbit { display: none; }
+}
 
 .btn {
   font-family: var(--mono); font-size: .85rem; font-weight: 500;
