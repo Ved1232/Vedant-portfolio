@@ -127,7 +127,20 @@
     });
   }
 
-  /* ---------- 6. Scroll reveals (IntersectionObserver — works without GSAP) ---------- */
+  /* ---------- 6. Hero canvas fade-on-scroll ---------- */
+  var heroCanvas = document.getElementById("heroCanvas");
+  if (heroCanvas && !prefersReducedMotion && "IntersectionObserver" in window) {
+    var steps = [];
+    for (var i = 0; i <= 20; i++) steps.push(i / 20);
+
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        heroCanvas.style.opacity = entry.intersectionRatio;
+      });
+    }, { threshold: steps }).observe(document.querySelector(".hero"));
+  }
+
+  /* ---------- 7. Scroll reveals (IntersectionObserver — works without GSAP) ---------- */
   if (!prefersReducedMotion && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
