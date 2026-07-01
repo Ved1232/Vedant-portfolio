@@ -1,515 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Vedant Chavan | Cloud &amp; DevOps Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="styles/styles.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vedant Chavan — Cloud & DevOps Engineer</title>
+  <meta name="description" content="Vedant Chavan is a Cloud & DevOps engineer in Dublin building secure, automated infrastructure with AWS, Azure, Terraform, Docker and Kubernetes.">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KV8B6R8064"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KV8B6R8064');
-  </script>
+  <!-- Fonts: Archivo (display + body) & JetBrains Mono (terminal / utility) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ── NAVIGATION ── -->
-  <nav class="nav" id="nav">
-    <div class="nav-brand">
-      <span class="nav-initials">VC</span>
-      <span class="nav-name">Vedant Chavan</span>
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a class="nav__logo mono" href="#top">vc<span class="accent">_</span></a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about" data-scroll>about</a>
+      <a href="#pipeline" data-scroll>projects</a>
+      <a href="#experience" data-scroll>experience</a>
+      <a href="#writing" data-scroll>writing</a>
+      <a href="#contact" data-scroll class="nav__cta">contact</a>
+    </nav>
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <p class="hero__prompt mono">
+        <span class="accent">~/dublin</span> $ whoami<span class="cursor">▋</span>
+      </p>
+
+      <h1 class="hero__name" aria-label="Vedant Chavan">
+        <span class="hero__line"><span class="hero__word">VEDANT</span></span>
+        <span class="hero__line hero__line--indent"><span class="hero__word">CHAVAN</span></span>
+      </h1>
+
+      <div class="hero__meta">
+        <p class="hero__role">
+          Cloud &amp; DevOps Engineer — I build secure, automated and observable
+          infrastructure on AWS &amp; Azure. MSc Cloud Computing, Dublin.
+        </p>
+        <div class="hero__status mono">
+          <span class="dot"></span> available for opportunities
+        </div>
+      </div>
+
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="#pipeline" data-scroll>view the pipeline ↓</a>
+        <a class="btn btn--ghost" href="https://github.com/Ved1232" target="_blank" rel="noopener">github ↗</a>
+      </div>
+
+      <div class="hero__scrollhint mono">scroll</div>
+    </section>
+
+    <!-- ============ STACK MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>AWS</span><i>//</i><span>Azure</span><i>//</i><span>Terraform</span><i>//</i>
+        <span>Docker</span><i>//</i><span>Kubernetes</span><i>//</i><span>GitHub Actions</span><i>//</i>
+        <span>Jenkins</span><i>//</i><span>Prometheus</span><i>//</i><span>Grafana</span><i>//</i>
+        <span>Python</span><i>//</i><span>Django</span><i>//</i><span>PostgreSQL</span><i>//</i>
+        <span>AWS</span><i>//</i><span>Azure</span><i>//</i><span>Terraform</span><i>//</i>
+        <span>Docker</span><i>//</i><span>Kubernetes</span><i>//</i><span>GitHub Actions</span><i>//</i>
+        <span>Jenkins</span><i>//</i><span>Prometheus</span><i>//</i><span>Grafana</span><i>//</i>
+        <span>Python</span><i>//</i><span>Django</span><i>//</i><span>PostgreSQL</span><i>//</i>
+      </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="javascript:void(0)" class="nav-link active-link" data-section="home">Home</a></li>
-      <li><a href="javascript:void(0)" class="nav-link" data-section="about">About</a></li>
-      <li><a href="javascript:void(0)" class="nav-link" data-section="portfolio">Projects</a></li>
-      <li><a href="javascript:void(0)" class="nav-link" data-section="blogs">Blogs</a></li>
-      <li><a href="javascript:void(0)" class="nav-link" data-section="contact">Contact</a></li>
-    </ul>
-    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
-      <i class="fas fa-moon" id="themeIcon"></i>
-    </button>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
 
-  <!-- ── MOBILE MENU ── -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="javascript:void(0)" class="mob-link" data-section="home">Home</a></li>
-      <li><a href="javascript:void(0)" class="mob-link" data-section="about">About</a></li>
-      <li><a href="javascript:void(0)" class="mob-link" data-section="portfolio">Projects</a></li>
-      <li><a href="javascript:void(0)" class="mob-link" data-section="blogs">Blogs</a></li>
-      <li><a href="javascript:void(0)" class="mob-link" data-section="contact">Contact</a></li>
-    </ul>
-  </div>
-
-  <!-- ── SECTIONS WRAPPER ── -->
-  <main class="sections-wrapper">
-
-    <!-- ══════════════ HOME ══════════════ -->
-    <section class="section active" id="home">
-      <div class="hero">
-        <div class="hero-left">
-          <div class="hero-tag"><span class="tag-dot"></span>Available for Opportunities</div>
-          <h1 class="hero-title">
-            Vedant<br/>
-            <span class="hero-title-accent">Chavan</span>
-          </h1>
-          <p class="hero-role">Cloud &amp; DevOps Engineer</p>
-          <p class="hero-desc">
-            MSc Cloud Computing graduate based in Dublin. I build secure, automated, and scalable cloud solutions using AWS, Azure, Terraform, Docker, Kubernetes, and CI/CD pipelines.
+    <!-- ============ ABOUT ============ -->
+    <section class="about section" id="about">
+      <p class="eyebrow mono">// about</p>
+      <div class="about__grid">
+        <div class="about__text">
+          <h2 class="section__title reveal">Infrastructure that ships itself.</h2>
+          <p class="reveal">
+            I'm Vedant — an MSc Cloud Computing graduate (National College of Ireland)
+            with a Computer Science background and hands-on experience building backend
+            systems and cloud-native applications.
           </p>
-          <div class="hero-badges">
-            <span class="badge"><i class="fab fa-aws"></i> AWS</span>
-            <span class="badge"><i class="fab fa-microsoft"></i> Azure</span>
-            <span class="badge"><i class="fab fa-docker"></i> Docker</span>
-            <span class="badge"><i class="fas fa-dharmachakra"></i> K8s</span>
-            <span class="badge"><i class="fas fa-code-branch"></i> Terraform</span>
-          </div>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://github.com/Ved1232" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-            <a class="btn btn-outline" href="javascript:void(0)" data-section="contact">
-              <i class="fas fa-paper-plane"></i> Contact Me
-            </a>
-          </div>
-          <div class="hero-social">
-            <a href="https://www.linkedin.com/in/vedantrchavan/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/Ved1232" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="mailto:cvedant136@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          </div>
+          <p class="reveal">
+            My focus is cloud engineering, DevOps and platform work: designing scalable
+            systems, automating infrastructure with Terraform, containerising
+            applications, and building deployment workflows that are boring in the best
+            way — repeatable, observable and secure.
+          </p>
+          <ul class="about__facts mono reveal">
+            <li><b>location:</b> Dublin, Ireland <span class="muted">(Stamp 1G — full right to work)</span></li>
+            <li><b>certs:</b> AZ-104 · Oracle AI Foundations · Google Cloud</li>
+            <li><b>languages:</b> English · Hindi · Marathi</li>
+            <li><b>cv:</b> available on request</li>
+          </ul>
         </div>
-        <div class="hero-right">
-          <div class="hero-img-wrap">
-            <div class="hero-img-bg"></div>
-            <img src="img/Vedantimg.JPG" alt="Vedant Chavan" class="hero-img"/>
-            <div class="hero-cert-badge">
-              <i class="fab fa-microsoft"></i>
-              <span>AZ-104 Certified</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="stats-row">
-        <div class="stat-card">
-          <span class="stat-num">6</span>
-          <span class="stat-label">Projects Built</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">2</span>
-          <span class="stat-label">Cloud Platforms</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">AZ-104</span>
-          <span class="stat-label">Certified</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">MSc</span>
-          <span class="stat-label">Cloud Computing</span>
+        <aside class="about__terminal reveal" aria-label="Skills summary">
+          <div class="terminal__bar mono"><i></i><i></i><i></i> skills.yaml</div>
+          <pre class="terminal__body mono"><code><span class="tk">cloud:</span>
+  <span class="tv">- azure        <em># AZ-104 certified</em></span>
+  <span class="tv">- aws          <em># EC2, Lambda, ECR, S3, DynamoDB</em></span>
+<span class="tk">iac:</span>
+  <span class="tv">- terraform</span>
+<span class="tk">containers:</span>
+  <span class="tv">- docker</span>
+  <span class="tv">- kubernetes</span>
+<span class="tk">ci_cd:</span>
+  <span class="tv">- github_actions</span>
+  <span class="tv">- jenkins</span>
+<span class="tk">observability:</span>
+  <span class="tv">- prometheus</span>
+  <span class="tv">- grafana</span>
+<span class="tk">backend:</span>
+  <span class="tv">- python <em># django / flask</em></span>
+  <span class="tv">- postgres · mongodb · dynamodb</span></code></pre>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ PROJECT PIPELINE (horizontal scroll) ============ -->
+    <section class="pipeline" id="pipeline">
+      <div class="pipeline__viewport">
+        <div class="pipeline__rail"><div class="pipeline__progress" id="pipelineProgress"></div></div>
+
+        <div class="pipeline__track" id="pipelineTrack">
+
+          <!-- Intro panel -->
+          <article class="panel panel--intro">
+            <p class="eyebrow mono">// projects</p>
+            <h2 class="panel__big">THE<br>PIPELINE</h2>
+            <p class="panel__sub">Six projects, laid out like a deployment: from code to
+              running infrastructure. Keep scrolling — the page moves sideways.</p>
+            <p class="mono panel__hint">→ → →</p>
+          </article>
+
+          <!-- 01 -->
+          <article class="panel">
+            <p class="panel__stage mono"><span class="accent">01</span> / build</p>
+            <h3 class="panel__title">RAG Document Q&amp;A Pipeline</h3>
+            <p class="panel__desc">
+              Ask questions about a document set and get answers grounded only in that
+              content. LangChain orchestration, GPT-4o-mini, Chroma/Pinecone vector
+              search, Redis caching for repeat queries — packaged with Docker behind a
+              Streamlit front end.
+            </p>
+            <p class="panel__tags mono">langchain · docker · redis · pinecone</p>
+            <a class="btn btn--ghost" href="https://github.com/Ved1232/rag-docs-qa" target="_blank" rel="noopener">view code ↗</a>
+          </article>
+
+          <!-- 02 -->
+          <article class="panel">
+            <p class="panel__stage mono"><span class="accent">02</span> / provision</p>
+            <h3 class="panel__title">CloudNative CarZone Platform</h3>
+            <p class="panel__desc">
+              A Django app on AWS behind Nginx with PostgreSQL. Terraform provisions the
+              EC2 server and networking; CI/CD builds the Docker image, pushes to ECR and
+              redeploys automatically. Prometheus + Grafana watch the whole thing.
+            </p>
+            <p class="panel__tags mono">terraform · aws · prometheus · grafana</p>
+            <a class="btn btn--ghost" href="https://github.com/Ved1232/cloudnative-carzone-platform" target="_blank" rel="noopener">view code ↗</a>
+          </article>
+
+          <!-- 03 -->
+          <article class="panel">
+            <p class="panel__stage mono"><span class="accent">03</span> / stream</p>
+            <h3 class="panel__title">AWS IoT Smart Agriculture Pipeline</h3>
+            <p class="panel__desc">
+              Serverless ingestion for sensor data: events flow through Kinesis into
+              Lambda, landing in DynamoDB and S3. The entire stack is defined in
+              Terraform, so it can be rebuilt from code in minutes.
+            </p>
+            <p class="panel__tags mono">kinesis · lambda · dynamodb · terraform</p>
+            <a class="btn btn--ghost" href="https://github.com/Ved1232/fleet-management-pipeline" target="_blank" rel="noopener">view code ↗</a>
+          </article>
+
+          <!-- 04 -->
+          <article class="panel">
+            <p class="panel__stage mono"><span class="accent">04</span> / ship</p>
+            <h3 class="panel__title">CI/CD: Dockerized 2-Tier App</h3>
+            <p class="panel__desc">
+              A Jenkins pipeline for a Flask + MySQL app: every push builds a Docker
+              image, runs checks and a Trivy security scan, pushes to AWS ECR, and
+              deploys to EC2 with Docker Compose.
+            </p>
+            <p class="panel__tags mono">jenkins · docker · trivy · ecr</p>
+            <a class="btn btn--ghost" href="https://github.com/Ved1232/two-tier-webapp" target="_blank" rel="noopener">view code ↗</a>
+          </article>
+
+          <!-- 05 -->
+          <article class="panel">
+            <p class="panel__stage mono"><span class="accent">05</span> / run</p>
+            <h3 class="panel__title">Django Tiffin Service + DynamoDB</h3>
+            <p class="panel__desc">
+              A food-delivery management system built with Django, using DynamoDB for
+              fast NoSQL storage and S3 for images, hosted on AWS EC2.
+            </p>
+            <p class="panel__tags mono">django · dynamodb · s3 · ec2</p>
+            <a class="btn btn--ghost" href="https://github.com/Ved1232/inventory_management" target="_blank" rel="noopener">view code ↗</a>
+          </article>
+
+          <!-- 06 -->
+          <article class="panel">
+            <p class="panel__stage mono"><span class="accent">06</span> / serve</p>
+            <h3 class="panel__title">This Site</h3>
+            <p class="panel__desc">
+              Plain HTML/CSS/JS — no framework — hosted on S3 + CloudFront. Hosting, TLS
+              and a locked-down bucket policy are defined in Terraform, with a GitHub
+              OIDC role for automated deploys. You're looking at the pipeline's output.
+            </p>
+            <p class="panel__tags mono">s3 · cloudfront · terraform · oidc</p>
+            <a class="btn btn--ghost" href="https://github.com/Ved1232/Vedant-portfolio" target="_blank" rel="noopener">view code ↗</a>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ══════════════ ABOUT ══════════════ -->
-    <section class="section" id="about">
-      <div class="section-header">
-        <p class="section-tag">Get to Know Me</p>
-        <h2 class="section-title">About <span>Me</span></h2>
-      </div>
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <p class="eyebrow mono">// experience &amp; education</p>
+      <h2 class="section__title reveal">The log so far.</h2>
 
-      <div class="about-grid">
-        <div class="about-text-col">
-          <p>I'm Vedant Chavan, an MSc graduate in Cloud Computing based in Dublin with a strong background in Computer Science and hands-on experience building backend systems and cloud-based applications.</p>
-          <p>My main interests are Cloud Engineering, DevOps, Platform Engineering, and backend development. I enjoy designing scalable systems, automating infrastructure, containerizing applications, and building reliable deployment workflows using modern cloud and CI/CD practices.</p>
-          <p>I have worked across AWS and Microsoft Azure and built projects involving Django, Flask, Docker, Kubernetes, PostgreSQL, MySQL, MongoDB, and cloud-native services. My experience includes backend APIs, deployment automation, cloud-hosted applications, and production-style project delivery.</p>
+      <ol class="log">
+        <li class="log__row reveal">
+          <span class="log__date mono">2025 — 2026</span>
+          <div>
+            <h3>MSc Cloud Computing</h3>
+            <p class="log__org mono">National College of Ireland, Dublin</p>
+            <p>Cloud and DevOps projects across AWS, CI/CD, IaC, cloud security and
+              backend systems — including Django applications integrated with AWS services.</p>
+          </div>
+        </li>
+        <li class="log__row reveal">
+          <span class="log__date mono">2022 — 2023</span>
+          <div>
+            <h3>Problem Tester</h3>
+            <p class="log__org mono">Code Chief, Navi Mumbai</p>
+            <p>Validated and tested coding problems, supporting technical quality and
+              correctness for the platform.</p>
+          </div>
+        </li>
+        <li class="log__row reveal">
+          <span class="log__date mono">2022</span>
+          <div>
+            <h3>Web Development Intern</h3>
+            <p class="log__org mono">Teachnook, Bangalore</p>
+            <p>Built responsive web applications with HTML, CSS and JavaScript; optimised
+              performance and assisted with REST API integration.</p>
+          </div>
+        </li>
+        <li class="log__row reveal">
+          <span class="log__date mono">2021</span>
+          <div>
+            <h3>Trainee Software Developer</h3>
+            <p class="log__org mono">Eddy Tools Tech Solutions, Thane</p>
+            <p>Python and Django backend development, testing, bug fixing, technical
+              documentation and deployment support.</p>
+          </div>
+        </li>
+        <li class="log__row reveal">
+          <span class="log__date mono">2021 — 2024</span>
+          <div>
+            <h3>B.Tech Computer Science &amp; Engineering</h3>
+            <p class="log__org mono">Bharati Vidyapeeth Deemed University, Pune</p>
+            <p>Data structures, OOP, algorithms, databases, software testing, AI and
+              network security.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-          <div class="about-info-grid">
-            <div class="info-item"><span class="info-label">Location</span><span class="info-val">Dublin, Ireland</span></div>
-            <div class="info-item"><span class="info-label">Degree</span><span class="info-val">MSc Cloud Computing</span></div>
-            <div class="info-item"><span class="info-label">Certification</span><span class="info-val">AZ-104</span></div>
-            <div class="info-item"><span class="info-label">Email</span><span class="info-val"><a href="mailto:cvedant136@gmail.com">cvedant136@gmail.com</a></span></div>
-            <div class="info-item"><span class="info-label">Languages</span><span class="info-val">English, Hindi, Marathi</span></div>
-            <div class="info-item"><span class="info-label">CV</span><span class="info-val">Available on request</span></div>
-          </div>
-        </div>
+    <!-- ============ WRITING ============ -->
+    <section class="section" id="writing">
+      <p class="eyebrow mono">// writing</p>
+      <h2 class="section__title reveal">Notes from the field.</h2>
 
-        <div class="skills-col">
-          <h3 class="col-heading">Technical Skills</h3>
-          <div class="skill-bars">
-            <div class="skill-bar">
-              <div class="skill-info"><span>Azure</span><span>80%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="--w:80%"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>AWS</span><span>75%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="--w:75%"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>Docker</span><span>75%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="--w:75%"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>Kubernetes</span><span>65%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="--w:65%"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>Python / Django / Flask</span><span>80%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="--w:80%"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>Terraform / IaC</span><span>70%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="--w:70%"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>CI/CD (Jenkins, GitHub Actions)</span><span>70%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="--w:70%"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>Databases (Postgres, MongoDB, DynamoDB)</span><span>70%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="--w:70%"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Timeline -->
-      <div class="timeline-section">
-        <h3 class="col-heading" style="margin-bottom:2.5rem;">Experience &amp; Education</h3>
-        <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-dot edu"></div>
-            <div class="tl-content">
-              <span class="tl-date"><i class="fas fa-graduation-cap"></i> Jan 2025 – Apr 2026</span>
-              <h4>MSc Cloud Computing</h4>
-              <p class="tl-org">National College of Ireland, Dublin</p>
-              <p>Built cloud and DevOps projects using AWS, CI/CD, IaC, cloud security, and backend systems including Django applications integrated with AWS services.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot edu"></div>
-            <div class="tl-content">
-              <span class="tl-date"><i class="fas fa-graduation-cap"></i> Jul 2021 – Jun 2024</span>
-              <h4>B.Tech Computer Science &amp; Engineering</h4>
-              <p class="tl-org">Bharati Vidyapeeth Deemed University, Pune</p>
-              <p>Core CS modules: data structures, OOP, algorithms, databases, software testing, AI, and network security.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot work"></div>
-            <div class="tl-content">
-              <span class="tl-date"><i class="fas fa-briefcase"></i> Jan 2022 – Nov 2022</span>
-              <h4>Web Development Intern</h4>
-              <p class="tl-org">Teachnook, Bangalore</p>
-              <p>Developed responsive web applications using HTML, CSS, and JavaScript; optimized performance and assisted with REST API integration.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot work"></div>
-            <div class="tl-content">
-              <span class="tl-date"><i class="fas fa-briefcase"></i> Jan 2021 – Dec 2021</span>
-              <h4>Trainee Software Developer</h4>
-              <p class="tl-org">Eddy Tools Tech Solutions, Thane</p>
-              <p>Python and Django backend development, testing, bug fixing, technical documentation, and deployment support.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot work"></div>
-            <div class="tl-content">
-              <span class="tl-date"><i class="fas fa-code"></i> Jul 2022 – Jan 2023</span>
-              <h4>Problem Tester</h4>
-              <p class="tl-org">Code Chief, Navi Mumbai</p>
-              <p>Validated and tested coding problems, supporting technical quality and problem correctness for the platform.</p>
-            </div>
-          </div>
-        </div>
+      <div class="posts">
+        <a class="post reveal" href="Azure.html">
+          <span class="post__tag mono">azure</span>
+          <span class="post__title">Azure Networking Basics — VNets, subnets, NSGs, UDRs and load balancing</span>
+          <span class="post__arrow mono">→</span>
+        </a>
+        <a class="post reveal" href="Deployment.html">
+          <span class="post__tag mono">cloud</span>
+          <span class="post__title">Static Website Hosting — S3 + CloudFront vs Azure Storage + Front Door</span>
+          <span class="post__arrow mono">→</span>
+        </a>
+        <a class="post reveal" href="Deployment.html">
+          <span class="post__tag mono">iac</span>
+          <span class="post__title">Terraform for Cloud Platforms — modules, environments, remote state, CI validation</span>
+          <span class="post__arrow mono">→</span>
+        </a>
+        <a class="post reveal" href="Devops.html">
+          <span class="post__tag mono">devops</span>
+          <span class="post__title">GitOps on AKS with Argo CD — declarative delivery, promotion and rollbacks</span>
+          <span class="post__arrow mono">→</span>
+        </a>
+        <a class="post reveal" href="Deployment.html">
+          <span class="post__tag mono">devops</span>
+          <span class="post__title">Deployment Strategies — Blue/Green, Canary and Rolling, safely in production</span>
+          <span class="post__arrow mono">→</span>
+        </a>
       </div>
     </section>
 
-    <!-- ══════════════ PROJECTS ══════════════ -->
-    <section class="section" id="portfolio">
-      <div class="section-header">
-        <p class="section-tag">What I've Built</p>
-        <h2 class="section-title">My <span>Projects</span></h2>
-      </div>
-      <p class="section-desc">A selection of cloud, DevOps, and backend engineering projects.</p>
+    <!-- ============ CONTACT ============ -->
+    <section class="contact section" id="contact">
+      <p class="eyebrow mono">// contact</p>
+      <h2 class="contact__title reveal">Let's build<br>something<span class="accent">.</span></h2>
+      <p class="contact__sub reveal">Open to SRE, DevOps and cloud engineering roles,
+        collaborations and a good conversation about infrastructure.</p>
 
-      <div class="projects-grid">
+      <a class="contact__email reveal" href="mailto:cvedant136@gmail.com">cvedant136@gmail.com</a>
 
-        <div class="project-card featured">
-          <div class="project-img icon-tile">
-            <div class="icon-visual"><i class="fas fa-robot"></i></div>
-            <div class="project-overlay">
-              <a href="https://github.com/Ved1232/rag-docs-qa" class="overlay-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag ai">AI / RAG</span>
-              <span class="project-tag backend">LangChain</span>
-              <span class="project-tag docker">Docker</span>
-            </div>
-            <h3>RAG Document Q&amp;A Pipeline</h3>
-            <p>Ask questions about a set of documents and get answers based only on their content, not the model's general knowledge. Uses LangChain with OpenAI (GPT-4o-mini for answers, text-embedding-3-small for search), a Chroma/Pinecone vector store, and Redis to cache repeat questions. Packaged with Docker, with a Streamlit front end.</p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img icon-tile">
-            <div class="icon-visual"><i class="fas fa-car"></i></div>
-            <div class="project-overlay">
-              <a href="https://github.com/Ved1232/cloudnative-carzone-platform" class="overlay-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag aws">AWS</span>
-              <span class="project-tag infra">Terraform</span>
-              <span class="project-tag devops">Monitoring</span>
-            </div>
-            <h3>CloudNative CarZone Platform</h3>
-            <p>A Django app deployed on AWS behind Nginx, with PostgreSQL for data and Prometheus + Grafana for monitoring. Terraform provisions the EC2 server and networking, and a CI/CD pipeline builds the Docker image, pushes it to AWS ECR, and redeploys it automatically.</p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/AWS.png" alt="AWS IoT Smart Agriculture Pipeline"/>
-            <div class="project-overlay">
-              <a href="https://github.com/Ved1232/fleet-management-pipeline" class="overlay-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag aws">AWS</span>
-              <span class="project-tag infra">Serverless</span>
-              <span class="project-tag devops">IoT</span>
-            </div>
-            <h3>AWS IoT Smart Agriculture Pipeline</h3>
-            <p>A serverless pipeline for streaming sensor data: events flow through Kinesis to Lambda functions, which write to DynamoDB and S3. Infrastructure is defined in Terraform so the whole stack can be rebuilt from code.</p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/invent.jpg" alt="Django Tiffin Service"/>
-            <div class="project-overlay">
-              <a href="https://github.com/Ved1232/inventory_management" class="overlay-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag backend">Django</span>
-              <span class="project-tag aws">AWS</span>
-              <span class="project-tag infra">DynamoDB</span>
-            </div>
-            <h3>Django Tiffin Service + DynamoDB</h3>
-            <p>A food delivery management system built with Django, using DynamoDB for fast NoSQL storage and S3 for images, hosted on AWS EC2.</p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/port5.jpg" alt="CI/CD Dockerized 2-Tier App"/>
-            <div class="project-overlay">
-              <a href="https://github.com/Ved1232/two-tier-webapp" class="overlay-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag devops">Jenkins</span>
-              <span class="project-tag docker">Docker</span>
-              <span class="project-tag aws">AWS</span>
-            </div>
-            <h3>CI/CD: Dockerized 2-Tier App (Jenkins)</h3>
-            <p>A Jenkins pipeline for a Flask + MySQL app: on every push, Jenkins builds a Docker image, runs checks and a Trivy security scan, pushes the image to AWS ECR, then deploys it to EC2 with Docker Compose.</p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/port7.jpg" alt="Portfolio Static Site"/>
-            <div class="project-overlay">
-              <a href="https://vedantchavan01.vip" class="overlay-btn" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> View Live</a>
-              <a href="https://github.com/Ved1232/Vedant-portfolio" class="overlay-btn outline" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag aws">AWS</span>
-              <span class="project-tag infra">Terraform</span>
-              <span class="project-tag devops">CDN</span>
-            </div>
-            <h3>Portfolio Static Site</h3>
-            <p>This portfolio — a plain HTML/CSS/JS site (no framework) hosted on AWS S3 and CloudFront. The hosting, TLS certificate, and a locked-down S3 bucket policy are all defined in Terraform, with a GitHub OIDC role already set up for automated deploys.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ══════════════ BLOGS ══════════════ -->
-    <section class="section" id="blogs">
-      <div class="section-header">
-        <p class="section-tag">Writing &amp; Insights</p>
-        <h2 class="section-title">My <span>Blogs</span></h2>
-      </div>
-
-      <div class="blogs-grid">
-
-        <article class="blog-card">
-          <div class="blog-img"><img src="img/blog1.jpg" alt="Azure Networking"/></div>
-          <div class="blog-body">
-            <span class="blog-cat">Azure</span>
-            <h3><a href="Azure.html">Azure Networking Basics (VNets, NSGs)</a></h3>
-            <p>A practical guide to VNets, subnets, NSGs, UDRs, and load balancing for real-world Azure deployments.</p>
-            <a href="Azure.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-img"><img src="img/blog2.jpg" alt="Static Website Hosting"/></div>
-          <div class="blog-body">
-            <span class="blog-cat">Cloud</span>
-            <h3><a href="Deployment.html">Static Website Hosting on Cloud</a></h3>
-            <p>Compare Azure Storage + Front Door vs AWS S3 + CloudFront, with caching, TLS, and custom domains.</p>
-            <a href="Deployment.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-img"><img src="img/port3.jpg" alt="Terraform"/></div>
-          <div class="blog-body">
-            <span class="blog-cat">IaC</span>
-            <h3><a href="Deployment.html">Terraform for Cloud Platforms</a></h3>
-            <p>How I structure modules, environments, remote state, and CI validation for repeatable infrastructure.</p>
-            <a href="Deployment.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-img"><img src="img/port6.jpg" alt="GitOps on AKS"/></div>
-          <div class="blog-body">
-            <span class="blog-cat">DevOps</span>
-            <h3><a href="Devops.html">GitOps on AKS with Argo CD</a></h3>
-            <p>From repo to cluster: declarative delivery, promotion, and rollbacks using Argo CD on Azure Kubernetes Service.</p>
-            <a href="Devops.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-img"><img src="img/port4.jpg" alt="Deployment Strategies"/></div>
-          <div class="blog-body">
-            <span class="blog-cat">DevOps</span>
-            <h3><a href="Deployment.html">Deployment Strategies</a></h3>
-            <p>Blue/Green, Canary, and Rolling updates — when to use each and how to implement them safely in production.</p>
-            <a href="Deployment.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-img"><img src="img/AWS.png" alt="AWS Serverless Pipelines"/></div>
-          <div class="blog-body">
-            <span class="blog-cat">AWS</span>
-            <h3><a href="Deployment.html">AWS Serverless Data Pipelines</a></h3>
-            <p>IoT Core → Kinesis → Lambda → DynamoDB: patterns for scalable ingestion and real-time monitoring.</p>
-            <a href="Deployment.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ══════════════ CONTACT ══════════════ -->
-    <section class="section" id="contact">
-      <div class="section-header">
-        <p class="section-tag">Let's Talk</p>
-        <h2 class="section-title">Get In <span>Touch</span></h2>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info-col">
-          <h3>Open to Opportunities</h3>
-          <p>I'm open to graduate opportunities, cloud and DevOps roles, technical collaborations, and professional networking. If you'd like to discuss an opportunity or request my CV, feel free to reach out.</p>
-
-          <div class="contact-details">
-            <div class="contact-detail-item">
-              <div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div>
-              <div><strong>Location</strong><p>Dublin, Ireland</p></div>
-            </div>
-            <div class="contact-detail-item">
-              <div class="cd-icon"><i class="fas fa-envelope"></i></div>
-              <div><strong>Email</strong><p><a href="mailto:cvedant136@gmail.com">cvedant136@gmail.com</a></p></div>
-            </div>
-            <div class="contact-detail-item">
-              <div class="cd-icon"><i class="fas fa-language"></i></div>
-              <div><strong>Languages</strong><p>English, Hindi, Marathi</p></div>
-            </div>
-            <div class="contact-detail-item">
-              <div class="cd-icon"><i class="fas fa-file-alt"></i></div>
-              <div><strong>CV</strong><p>Available on request</p></div>
-            </div>
-          </div>
-
-          <div class="contact-social">
-            <a href="https://www.linkedin.com/in/vedantrchavan/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/Ved1232" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="mailto:cvedant136@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-
-        <div class="contact-form-col">
-          <form class="contact-form" action="https://formspree.io/f/mjgaylny" method="POST">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" required/>
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="john@example.com" required/>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Job Opportunity / Collaboration" required/>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" placeholder="Tell me about the opportunity or how I can help..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              <i class="fas fa-paper-plane"></i> Send Message
-            </button>
-          </form>
-          <p class="contact-note">Prefer direct email? <a href="mailto:cvedant136@gmail.com">cvedant136@gmail.com</a></p>
-        </div>
+      <div class="contact__links mono reveal">
+        <a href="https://github.com/Ved1232" target="_blank" rel="noopener">github ↗</a>
+        <a href="https://www.linkedin.com/in/vedantrchavan/" target="_blank" rel="noopener">linkedin ↗</a>
+        <a href="mailto:cvedant136@gmail.com">email ↗</a>
       </div>
     </section>
 
   </main>
 
-  <!-- ── FOOTER ── -->
-  <footer class="footer">
-    <p>Designed &amp; Built by <span>Vedant Chavan</span> · Dublin, Ireland</p>
-    <p class="footer-links">
-      <a href="https://github.com/Ved1232" target="_blank" rel="noopener">GitHub</a> ·
-      <a href="https://www.linkedin.com/in/vedantrchavan/" target="_blank" rel="noopener">LinkedIn</a> ·
-      <a href="mailto:cvedant136@gmail.com">Email</a>
-    </p>
+  <footer class="footer mono">
+    <span>© 2026 vedant chavan — dublin, ireland</span>
+    <span class="muted">html/css/js · s3 · cloudfront · terraform</span>
   </footer>
 
-  <script src="app.js"></script>
+  <!-- Smooth scrolling + animation engines -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
