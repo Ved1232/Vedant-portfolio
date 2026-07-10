@@ -352,7 +352,7 @@ img { max-width: 100%; display: block; }
   display: flex; flex-direction: column; justify-content: center;
   padding: 6rem var(--pad);
   border-right: 1px solid var(--line);
-  position: relative;
+  position: relative; top: 0; left: 0;
 }
 .panel:nth-child(even) { background: var(--surface); }
 
