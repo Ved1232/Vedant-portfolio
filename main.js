@@ -96,7 +96,25 @@
 
       var getAmount = function () { return track.scrollWidth - window.innerWidth; };
 
-      var horizontalTween = gsap.to(track, {
+      /* Panel content fades in as each panel slides into view.
+         Driven directly from the tween's onUpdate — containerAnimation
+         triggers are unreliable with Lenis + pinning and left panel
+         content (including the project links) stuck at opacity 0.
+         Content is hidden via CSS only while .pipeline-anim is on <body>,
+         so if anything fails the panels are simply visible. */
+      var panels = gsap.utils.toArray(".panel");
+      document.body.classList.add("pipeline-anim");
+
+      var revealPanels = function () {
+        panels.forEach(function (panel) {
+          if (!panel.classList.contains("is-live") &&
+              panel.getBoundingClientRect().left < window.innerWidth * 0.8) {
+            panel.classList.add("is-live");
+          }
+        });
+      };
+
+      gsap.to(track, {
         x: function () { return -getAmount(); },
         ease: "none",
         scrollTrigger: {
@@ -106,24 +124,21 @@
           pin: true,
           scrub: 1,                 // ties motion to the scrollbar with 1s smoothing
           invalidateOnRefresh: true,
+          onRefresh: revealPanels,
           onUpdate: function (self) {
             if (progress) progress.style.width = (self.progress * 100) + "%";
+            revealPanels();
           }
         }
       });
 
-      /* Each panel's content drifts in as it slides into view */
-      gsap.utils.toArray(".panel").forEach(function (panel) {
-        gsap.from(panel.children, {
-          opacity: 0, y: 40, stagger: 0.07, duration: 0.6, ease: "power2.out",
-          scrollTrigger: {
-            trigger: panel,
-            containerAnimation: horizontalTween,
-            start: "left 75%",
-            toggleActions: "play none none none"
-          }
-        });
-      });
+      revealPanels();
+
+      /* matchMedia cleanup (viewport shrinks below 901px) */
+      return function () {
+        document.body.classList.remove("pipeline-anim");
+        panels.forEach(function (p) { p.classList.remove("is-live"); });
+      };
     });
   }
 

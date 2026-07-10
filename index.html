@@ -45,22 +45,25 @@
       </p>
 
       <h1 class="hero__name" aria-label="Vedant Chavan">
-        <span class="hero__line"><span class="hero__word">VEDANT</span></span>
-        <span class="hero__line hero__line--indent"><span class="hero__word">CHAVAN</span></span>
+        <span class="hero__line"><span class="hero__word">Vedant</span></span>
+        <span class="hero__line hero__line--indent"><span class="hero__word">Chavan</span></span>
       </h1>
 
       <div class="hero__split">
         <div class="hero__text">
           <p class="hero__role">
-            Cloud &amp; DevOps Engineer — I build secure, automated and observable
-            infrastructure on AWS &amp; Azure. MSc Cloud Computing, Dublin.
+            <strong>Cloud &amp; DevOps Engineer</strong> <br />
+            I build and automate cloud infrastructure — Terraform-provisioned AWS
+            and Azure environments, containerised applications, and CI/CD
+            pipelines that deploy without drama. <br />
+            <small>MSc Cloud Computing, Dublin</small>
           </p>
           <div class="hero__status mono">
             <span class="dot"></span> available for opportunities
           </div>
 
           <div class="hero__actions">
-            <a class="btn btn--solid" href="#pipeline" data-scroll>view the pipeline ↓</a>
+            <a class="btn btn--solid" href="#pipeline" data-scroll>view the project pipeline</a>
             <a class="btn btn--ghost" href="https://github.com/Ved1232" target="_blank" rel="noopener">github ↗</a>
           </div>
         </div>
@@ -84,7 +87,7 @@
         </div>
       </div>
 
-      <div class="hero__scrollhint mono">scroll</div>
+      
     </section>
 
     <!-- ============ STACK MARQUEE ============ -->
@@ -195,13 +198,14 @@
           <!-- 03 -->
           <article class="panel">
             <p class="panel__stage mono"><span class="accent">03</span> / stream</p>
-            <h3 class="panel__title">AWS IoT Smart Agriculture Pipeline</h3>
+            <h3 class="panel__title">Fleet Telemetry &amp; Predictive Maintenance</h3>
             <p class="panel__desc">
-              Serverless ingestion for sensor data: events flow through Kinesis into
-              Lambda, landing in DynamoDB and S3. The entire stack is defined in
-              Terraform, so it can be rebuilt from code in minutes.
+              A serverless IoT pipeline for vehicle fleets: telemetry streams through
+              Kinesis into Lambda, landing in DynamoDB and S3, while SageMaker flags
+              maintenance issues before they become breakdowns. A React dashboard
+              shows the fleet live — and the entire stack is defined in Terraform.
             </p>
-            <p class="panel__tags mono">kinesis · lambda · dynamodb · terraform</p>
+            <p class="panel__tags mono">kinesis · lambda · sagemaker · terraform</p>
             <a class="btn btn--ghost" href="https://github.com/Ved1232/fleet-management-pipeline" target="_blank" rel="noopener">view code ↗</a>
           </article>
 
@@ -221,12 +225,14 @@
           <!-- 05 -->
           <article class="panel">
             <p class="panel__stage mono"><span class="accent">05</span> / run</p>
-            <h3 class="panel__title">Django Tiffin Service + DynamoDB</h3>
+            <h3 class="panel__title">Inventory Management System</h3>
             <p class="panel__desc">
-              A food-delivery management system built with Django, using DynamoDB for
-              fast NoSQL storage and S3 for images, hosted on AWS EC2.
+              A Django + DRF inventory platform on PostgreSQL: JWT authentication,
+              role-based access across four user tiers (admin to viewer), product and
+              category management, and a GitHub Actions pipeline that tests and
+              deploys every push.
             </p>
-            <p class="panel__tags mono">django · dynamodb · s3 · ec2</p>
+            <p class="panel__tags mono">django · drf · postgresql · github actions</p>
             <a class="btn btn--ghost" href="https://github.com/Ved1232/inventory_management" target="_blank" rel="noopener">view code ↗</a>
           </article>
 
@@ -309,27 +315,17 @@
       <div class="posts">
         <a class="post reveal" href="Azure.html">
           <span class="post__tag mono">azure</span>
-          <span class="post__title">Azure Networking Basics — VNets, subnets, NSGs, UDRs and load balancing</span>
+          <span class="post__title">Azure Fundamentals — cloud concepts, core services and pricing, AZ-900 style</span>
           <span class="post__arrow mono">→</span>
         </a>
         <a class="post reveal" href="Deployment.html">
-          <span class="post__tag mono">cloud</span>
-          <span class="post__title">Static Website Hosting — S3 + CloudFront vs Azure Storage + Front Door</span>
-          <span class="post__arrow mono">→</span>
-        </a>
-        <a class="post reveal" href="Deployment.html">
-          <span class="post__tag mono">iac</span>
-          <span class="post__title">Terraform for Cloud Platforms — modules, environments, remote state, CI validation</span>
+          <span class="post__tag mono">aws</span>
+          <span class="post__title">AWS Services Deployment Guide — core services, deployment process and best practices</span>
           <span class="post__arrow mono">→</span>
         </a>
         <a class="post reveal" href="Devops.html">
           <span class="post__tag mono">devops</span>
-          <span class="post__title">GitOps on AKS with Argo CD — declarative delivery, promotion and rollbacks</span>
-          <span class="post__arrow mono">→</span>
-        </a>
-        <a class="post reveal" href="Deployment.html">
-          <span class="post__tag mono">devops</span>
-          <span class="post__title">Deployment Strategies — Blue/Green, Canary and Rolling, safely in production</span>
+          <span class="post__title">Understanding DevOps — what it is, why it matters and the key terminology</span>
           <span class="post__arrow mono">→</span>
         </a>
       </div>
